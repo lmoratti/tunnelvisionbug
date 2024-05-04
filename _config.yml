@@ -1,5 +1,13 @@
-title: Cayman theme
-description: Cayman is a clean, responsive theme for GitHub Pages.
+title: TunnelVision
+description: "RTA-2024-1337: Vel facilisis volutpat est velit egestas dui id ornare arcu."
 show_downloads: true
-google_analytics:
+google_analytics: G-6JTRL0ZRGQ
 theme: jekyll-theme-cayman
+host: 0.0.0.0
+tunnelvision:
+  blog_url: https://leviathansecurity.com/blog
+  lab_url: https://github.com/leviathansecurity/TunnelVision/
+
+plugins:
+  - jekyll-loading-lazy 
+  - jekyll-language-plugin

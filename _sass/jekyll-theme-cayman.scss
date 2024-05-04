@@ -34,6 +34,16 @@ body {
   color: $body-text-color;
 }
 
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+
 #skip-to-content {
   height: 1px;
   width: 1px;
@@ -64,9 +74,10 @@ a {
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(27, 60, 206, 0.08);
+  border-color: rgba(255, 255, 255, 1);
   border-style: solid;
   border-width: 1px;
   border-radius: 0.3rem;
@@ -75,8 +86,8 @@ a {
   &:hover {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(5, 19, 148, 0.2);
+    border-color: rgba(9, 153, 64, 0.3);
   }
 
   + .btn {
@@ -108,11 +119,11 @@ a {
 .page-header {
   color: $header-heading-color;
   text-align: center;
-  background-color: $header-bg-color;
-  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  
+  background-image: linear-gradient(120deg, rgba($header-bg-color-secondary,0.5), rgba($header-bg-color,0.5));
 
   @include large {
-    padding: 5rem 6rem;
+    padding: 1rem 1rem;
   }
 
   @include medium {
@@ -127,24 +138,31 @@ a {
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
+  opacity: 1;
 
   @include large {
     font-size: 3.25rem;
+    font-family: Hakuna Sans, sans-serif;
+    color: #fff;
   }
 
   @include medium {
     font-size: 2.25rem;
+    font-family: Hakuna Sans, sans-serif;
+    color: #fff;
   }
 
   @include small {
     font-size: 1.75rem;
+    font-family: Hakuna Sans, sans-serif;
+    color: #fff;
   }
 }
 
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
-  opacity: 0.7;
+  opacity: 1;
 
   @include large {
     font-size: 1.25rem;
@@ -161,16 +179,18 @@ a {
 
 .main-content {
   word-wrap: break-word;
+  border: #fafbfc;
 
   :first-child {
     margin-top: 0;
   }
 
   @include large {
-    max-width: 64rem;
+    max-width: 75rem;
     padding: 2rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem;
+    background: rgba(#1d394b,0.7);
   }
 
   @include medium {
@@ -198,7 +218,16 @@ a {
   }
 
   img {
-    max-width: 100%;
+    max-width: 800px;
+    max-height: 300px;
+  }
+  .leviathan_logo{
+    max-width: 600px;
+    max-height: 100px;
+    width: 50vw;
+    height: 10vw;
+    padding: 5px 5px;
+    filter: invert(100%)
   }
 
   h1,
@@ -375,4 +404,6 @@ a {
 
 .site-footer-credits {
   color: $blockquote-text-color;
+  display: block;
+  text-align-last: center;
 }
