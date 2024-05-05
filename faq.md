@@ -10,7 +10,7 @@ We have not seen evidence as of 5/6/2024 of exploitation in the wild. However, w
 
 In order to detect this, you would need to be reviewing DHCP network traffic and DHCP client logs. This might be possible retroactively.
 
-# Why are you saying this is novel routing table issues have been known for years?
+# Haven't routing table leaks in VPNs been known for years? How is this novel?
 Correct, routing table issues have been known for years. This is why the privacy and anonymity communities discourage VPNs and have been doing so for years. Most issues found have been small leaks and patchable.
 
 We have not seen any prior research using DHCP option 121 to deliver routes, which is the novel part of our research. It also not patchable in the same way smaller leaks have been (besides Linux).
