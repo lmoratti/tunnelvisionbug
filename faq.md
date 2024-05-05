@@ -18,7 +18,7 @@ We have not seen any prior research using DHCP option 121 to deliver routes, whi
 # Wouldn't exploiting this be obvious?
 Not really. The VPN user shows as being connected to the VPN. Attackers can control any IPs they wish to decloak, so theoretically they could choose to not decloak leak checking IPs. They could also leak DNS IP's while forwarding the traffic so the VPN connection is intact but they obtain information about the traffic in the tunnel.
 
-In no circumstances did we observe a VPN Server disconnected us with kill switches or other features.
+In no circumstances did we observe a VPN Server disconnecting us with kill switches or other features.
 
 # Isn't most web traffic encrypted with HTTPS anyways?
 This is true. If HTTPS traffic is decloaked it is not possible to view the encrypted contents of the packet. For other protocols that are unencrypted, the packet's payload is also readable so in this way an attacker might get lucky.
