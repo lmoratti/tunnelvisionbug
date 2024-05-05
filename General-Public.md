@@ -8,6 +8,7 @@ Eventually, companies selling VPNs started promising VPNs could do something the
 
 We discovered a security and privacy problem in VPNs and we're calling it TunnelVision. This problem lets someone see what you're doing online, even if you think you're safely using a VPN. They can do this if they are on the same Wi-Fi or network as you. TunnelVision has been possible since 2002. It also doesn't have a complete fix for most computers.
 
+
 ## How TunnelVision Works
 
 Imagine your computer is like a traveler at a train station, and each network (like public Wi-Fi or a VPN) is a different train. The VPN train is intended to be safer to use. 
@@ -17,6 +18,8 @@ Your computer uses a map (called "routing tables") to decide which train to take
 The malicious person tricks your computer into sending your private info over the local network instead of the VPN, totally avoiding the VPN’s protection.
 
 Meanwhile, VPN marketing claims say they can protect you from someone changing the maps in the train station but this is impossible in most cases.
+
+<iframe width="560" height="315" align="center" src="https://www.youtube.com/embed/ajsLmZia6UU?si=tjakCcpuNF-KnGd9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Why This Matters
 
