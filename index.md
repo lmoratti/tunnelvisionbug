@@ -2,77 +2,85 @@
 layout: default
 ---
 # Introduction 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin tempor id. Ac tortor vitae purus faucibus ornare suspendisse. Scelerisque in dictum non consectetur a erat. Porttitor leo a diam sollicitudin tempor id eu nisl nunc. Tellus mauris a.
+VPNs are marketed as a security service that protects users even on untrusted networks (e.g. public Wi-Fi). However, it has been known within the security industry that these claims are questionable, and small leaks have been discovered over the years. Most research has been focused on VPN servers rather than leaking client traffic on a local network.
 
-Vel facilisis volutpat est velit egestas dui id ornare arcu. Cursus risus at ultrices mi tempus imperdiet nulla. Bibendum ut tristique et egestas quis ipsum suspendisse. Pretium aenean pharetra magna ac placerat
+Recently, a technique known as [TunnelCrack](https://tunnelcrack.mathyvanhoef.com/) allowed attackers to leak data from a VPN. Simultaneously, we have been working on a more general technique we call "TunnelVision."
 
-Quis risus sed vulputate odio ut. Blandit aliquam etiam erat velit scelerisque in dictum non consectetur. Urna nec tincidunt praesent semper feugiat. Scelerisque fermentum dui faucibus
+TunnelVision leaks VPN traffic more simply and powerfully. We have demonstrated an attacker can leak all traffic just by being on the same local network as a VPN user. 
 
-liquam sem et tortor consequat. Tempor id eu nisl nunc mi ipsum faucibus vitae
-
+From the user's perspective, they appear as if they are connected to the VPN.
 
 # How TunnelVision Works
-Ultricies leo integer malesuada nunc. Et sollicitudin ac orci phasellus egestas. Quis imperdiet massa tincidunt nunc. Nullam eget felis eget nunc lobortis mattis aliquam. In eu mi bibendum neque egestas 
+Computers may be connected to multiple networks at once. A VPN is also a network you're connected to. Computers decide which network they should send traffic through using a set of rules called "routing tables". 
 
-Porta nibh venenatis cras sed felis eget velit. Neque aliquam vestibulum morbi blandit cursus risus at. 
+An attacker on the same local network can manipulate these rules and force traffic over the wrong network.
 
+From there, they can redirect traffic meant for the VPN to the local network, *completely bypassing the VPN.* Because this technique is not dependent on exploiting VPN technologies or underlying protocols, it works completely independently of the VPN provider or implementation. 
 
-Et odio pellentesque diam volutpat commodo sed egestas egestas. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Consectetur adipiscing elit ut aliquam purus. Tincidunt vitae semper quis lectus nulla at volutpat. Justo eget magna fermentum iaculis eu non diam
-
-Donec enim diam vulputate ut pharetra sit. Felis eget nunc lobortis mattis aliquam. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Justo laoreet sit amet cursus sit amet dictum sit. Egestas sed sed risus pretium quam. 
+We call this total bypass, **decloaking.**
 
 # Impact 
-Et odio pellentesque diam volutpat commodo sed egestas egestas. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Consectetur adipiscing elit ut aliquam purus. Tincidunt vitae semper quis lectus nulla at volutpat. Justo eget magna fermentum iaculis eu non diam. 
+VPN users who expect VPNs to protect them on untrusted networks are as susceptible to the very same attacks as if they weren't using a VPN. This is particularly dangerous for people who rely on VPNs to keep them safe such as journalists and political dissidents.
 
-Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Justo laoreet sit amet cursus sit amet dictum sit. Egestas sed sed risus pretium quam. Convallis tellus id interdum velit laoreet. Sed turpis tincidunt id aliquet risus feugiat. Risus nullam eget felis eget nunc lobortis mattis. Ut eu sem integer vitae justo eget magna. Interdum velit euismod in pellentesque massa placerat duis ultricies lacus. Hendrerit gravida rutrum quisque non 
+Luckily, most users who use commercial VPNs are sending web traffic which is mostly HTTPS ([about 85%, actually](https://w3techs.com/technologies/details/ce-httpsdefault)). HTTPS traffic looks like gibberish to attackers using Tunnelvision, but they know who you are sending that gibberish to which can be an issue. If a website is using HTTP then it becomes possible to view everything you are saying as well as who you are saying it to.
 
-Venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Ultricies tristique nulla aliquet enim tortor at auctor. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Dignissim cras tincidunt lobortis feugiat vivamus. 
+Our research challenges previous understanding of VPN technology. It also raises questions about what other technologies are impacted by routing table attacks and how this could go unnoticed for 20+ years.
 
 # Why We Are Publishing Now
-Ipsum consequat nisl vel pretium lectus quam id leo in. Magna ac placerat vestibulum lectus mauris ultrices eros in. Enim nunc faucibus a pellentesque. Lobortis elementum nibh tellus molestie nunc. 
+We aim to raise awareness about this technique in the security and privacy communities. Since it could have been exploitable as early as 2002, it might already be in use without widespread knowledge. 
 
-aliquet sagittis id consectetur purus. Dignissim convallis aenean et tortor at risus. Fames ac turpis egestas maecenas pharetra convallis posuere. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Quis blandit turpis cursus in. Tempus iaculis urna id volutpat lacus.
+We initially disclosed this to several VPN providers but quickly realized that it wasn't scalable and there were too many affected parties. We contacted the EFF and CISA and through them, we've made over 50+ vendors aware of this before public release.
 
-aliquet sagittis id consectetur purus. Dignissim convallis aenean et tortor at risus. Fames ac turpis egestas maecenas pharetra convallis posuere. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Quis blandit turpis cursus in. Tempus iaculis urna id volutpat lacus.
+In addition, to help raise awareness, we decided to name the CVE, in the hopes that a more human-readable name would extend the awareness to outside the security and privacy communities and into the general public. 
 
 # How Do We Fix This
-Ipsum consequat nisl vel pretium lectus quam id leo in. Magna ac placerat vestibulum lectus mauris ultrices eros in. Enim nunc faucibus a pellentesque. Lobortis elementum nibh tellus molestie nunc. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Leo duis ut diam quam nulla porttitor massa id. Nunc sed blandit libero volutpat sed cras ornare arcu. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Duis ultricies lacus sed turpis.
+Well, that's a difficult question. VPNs were not made to secure every connection on a computer. Their purpose is to connect two local networks that normally are not connected and to secure data going over that bridge. It was not meant to protect traffic on the local network, just to protect traffic after exiting to the WAN.
 
-Risus viverra adipiscing at in tellus integer feugiat. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Arcu cursus vitae congue mauris. At volutpat diam ut venenatis tellus in metus vulputate. in tellus integer feugiat in tellus integer feugiat
+In that regard, VPNs are working as intended, local network protocols are working as intended, and the routing tables in your operating system are working as intended. Fundamentally, the public understanding of VPNs is what's broken. This is largely due to marketing campaigns by VPN providers. 
 
-Viverra orci sagittis eu volutpat odio facilisis mauris sit. Gravida in fermentum et sollicitudin ac. Consectetur libero id faucibus nisl. Eget est lorem ipsum dolor sit amet consectetur. Morbi leo urna molestie at elementum eu
+There is a fix on Linux operating systems through a feature called "network namespaces". Network namespaces can segment interfaces and routing tables away from the local network’s control.
 
-Faucibus pulvinar elementum integer enim neque volutpat ac. Orci a scelerisque purus semper eget duis at tellus. Orci eu lobortis elementum nibh tellus molestie nunc. Enim sed faucibus turpis in eu mi bibendum. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Urna nec tincidunt praesent semper feugiat.
+Other operating systems do not have a full fix available. For those operating systems, the best that a VPN provider can do is mitigate the leak. However, all mitigations we've observed still expose a serious issue for users who rely on total privacy of their connection and the issue can also be abused for censorship.
 
-Enim sed faucibus turpis in eu mi bibendum. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Urna nec tincidunt praesent semper feugiat urpis in eu mi bibendum.
+Additionally, there might be bypasses that we have not discovered for the mitigations, so inevitably relying on using mitigations will create a "cat and mouse" game between attackers and defenders.
 
-Quis commodo odio aenean sed adipiscing. Convallis convallis tellus id interdum velit laoreet. Leo vel fringilla est ullamcorper eget nulla facilisi etiam. Vitae justo eget magna fermentum iaculis eu non.
+Groups primarily affected by the shortcomings of mitigations are those who commonly are the targets of surveillance or spyware, journalists, whistleblowers, and those needing to bypass censorship. 
 
-Vulputate enim nulla aliquet porttitor. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Enim nunc faucibus a pellentesque sit amet porttitor.
+One could argue that the OS maintainers should implement this feature and one could also argue that VPNs shouldn't be advertising a feature that is impossible on many devices. 
 
-Urna duis convallis convallis tellus id interdum velit. Massa sed elementum tempus egestas sed sed risus pretium quam.  
+Ultimately, we feel that it's a shared responsibility and the people who suffer from this are the VPN users.
 
 # Call to Action
-Fermentum et sollicitudin ac orci phasellus:
-1.  Fermentum et sollicitudin ac orci phasellus
-1.  Mi proin sed libero enim sed faucibus turpis
-1.  Enim tortor at auctor urna nunc id cursus metus. Sit amet nisl purus in mollis nunc sed. 
-1.  Congue nisi vitae suscipit tellus mauris a. Venenatis cras sed felis eget velit.
+If you require total privacy of your connection:
+1.  Do not use untrusted networks (Public WiFi)
+1.  Consider using a hotspot with your VPN
+1.  Consider using a VPN inside a virtual machine that does not have a bridged network adapter
+1.  Use AdBlock and privacy browsers that reject tracking cookies
 
-Congue nisi vitae suscipit tellus mauris a:
-1.  Ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus.
-1.  Urna id volutpat lacus laoreet non curabitur gravida arcu. Enim tortor at auctor urna nunc id cursus
+If you are a VPN provider:
+1.  Review and update your marketing: do not claim untrusted networks can be secured by you
+1.  Where possible, use network namespaces features in your product
+1.  Consider host-based firewall protections to partially mitigate local network attacks
 
-Vivamus at augue eget arcu:
-1.  Urna id volutpat lacus laoreet non curabitur gravida arcu. Enim tortor at auctor urna nunc id cursus
+If you are an operating system maintainer:
+1.  Consider implementing network namespaces if your operating system doesn't support it.
 
 # Prior Research
-Fermentum et sollicitudin ac orci phasellus. Adipiscing enim eu turpis egestas pretium aenean. Arcu dui vivamus arcu felis bibendum ut tristique. Aliquet risus feugiat in ante metus. Donec enim diam vulputate ut pharetra sit amet. Mi proin sed libero enim sed faucibus turpis. Sed viverra tellus in hac habitasse platea. Dignissim cras tincidunt lobortis feugiat vivamus. 
+We found research related to DHCP leaking default routes over an incorrect interface [as far back as 2015](https://petsymposium.org/popets/2015/popets-2015-0006.pdf).
+However, it was implied that DHCP only pushed default routes and the research did not take into account DHCP option 121.
 
-tus venenatis lectus magna fringilla. Nascetur ridiculus mus mauris vitae ultricies leo. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Et sollicitudin ac orci phasellus egestas tellus. Urna duis convallis convallis tellus id interdum velit. Massa sed elementum tempus egestas sed sed risus pretium quam. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Eget magna fermentum iaculis eu non diam phasellus vestibulum. Arcu non odio euismod lacinia at quis. Aliquet eget sit amet tellus cras adipiscing.
+[This research from Anvil Secure](https://www.anvilsecure.com/blog/dhcp-games-with-smart-router-devices.html) did mention option 121, and they used this technique against attacking
+smart router devices with multiple physical network interfaces. However, this was not applied to network
+client devices that use a VPN which creates a virtual interface.
 
-Fermentum et sollicitudin ac orci phasellus. Adipiscing enim eu turpis egestas pretium aenean. Arcu dui vivamus arcu felis bibendum ut tristique. Aliquet risus feugiat in ante metus. Donec enim diam vulputate ut pharetra sit amet. Mi proin sed libero enim sed faucibus turpis. Sed viverra tellus in hac habitasse platea. Dignissim cras tincidunt lobortis feugiat vivamus. 
+In August 2023, [TunnelCrack was published](https://tunnelcrack.mathyvanhoef.com/#summary) demonstrating that routing rules can be attacked in different ways
+to leak VPN traffic. The paper details two methods of leaking VPN traffic:
+- Abusing non-RFC1918 IP ranges to leak traffic.
+- DNS spoofing the VPN server’s domain name to trick the VPN client into adding a routing rule
+exception for an IP address.
 
-Fermentum et sollicitudin ac orci phasellus. Adipiscing enim eu turpis egestas pretium aenean. Arcu dui vivamus arcu felis bibendum ut tristique. Aliquet risus feugiat in ante metus. Donec enim diam vulputate ut pharetra sit amet. Mi proin sed libero enim sed faucibus turpis. Sed viverra tellus in hac habitasse platea. Dignissim cras tincidunt lobortis feugiat vivamus. 
+However, neither technique described in TunnelCrack leveraged DHCP option 121 to push
+routes. Pushing routes through DHCP has a significantly higher impact from the same attacker vantage
+point (the ability to hand out IP leases for a non-RFC1918 range or spoofing DNS replies).
 
-Sit amet est placerat in egestas erat. Tristique senectus et netus et malesuada. Feugiat in ante metus dictum. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. 
+In short, researchers came very close to discovering TunnelVision earlier.

@@ -2,64 +2,58 @@
 layout: default
 ---
 ## What You Need to Know About VPNs and TunnelVision
+VPNs are often sold as a way to keep you safe on the internet, especially on Wi-Fi that isn't secure like in coffee shops, airports, or venues. But, VPNs were never really designed to do that. 
 
-Sit amet est placerat in egestas erat. Tristique senectus et netus et malesuada. Feugiat in ante metus dictum. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. 
+Eventually, companies selling VPNs started promising VPNs could do something they weren't designed for and developers used clever workarounds to fix issues. This approach appeared to work well until our discovery. 
 
-Suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Morbi tristique senectus et netus et malesuada fames ac. Fusce ut placerat orci nulla pellentesque dignissim enim. Blandit massa enim nec dui nunc mattis enim ut. Augue eget arcu dictum varius. Mauris pharetra et ultrices neque ornare aenean euismod.
-
-Diam maecenas sed enim ut sem viverra aliquet. Netus et malesuada fames ac turpis egestas sed tempus urna. Vitae tortor condimentum lacinia quis. Volutpat ac tincidunt vitae semper quis lectus nulla at. Sit amet porttitor eget dolor morbi. Nulla aliquet porttitor lacus luctus. Semper auctor neque vitae tempus.
-
+We discovered a security and privacy problem in VPNs and we're calling it TunnelVision. This problem lets someone see what you're doing online, even if you think you're safely using a VPN. They can do this if they are on the same Wi-Fi or network as you. TunnelVision has been possible since 2002. It also doesn't have a complete fix for most computers.
 
 ## How TunnelVision Works
-Vitae tempus quam pellentesque nec nam aliquam sem et tortor. In hendrerit gravida rutrum quisque non. Arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales. Ut faucibus pulvinar elementum integer enim neque. 
 
-Molestie a iaculis at erat pellentesque. Id neque aliquam vestibulum morbi blandit cursus risus at. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. Morbi leo urna molestie at elementum eu facilisis sed odio. 
+Imagine your computer is like a traveler at a train station, and each network (like public Wi-Fi or a VPN) is a different train. The VPN train is intended to be safer to use. 
 
-Felis eget nunc lobortis mattis aliquam faucibus purus. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Ultricies leo integer malesuada nunc vel risus commodo viverra maecenas. Non blandit massa enim nec dui nunc. Et pharetra pharetra massa massa ultricies mi quis hendrerit.
+Your computer uses a map (called "routing tables") to decide which train to take. But if someone changes the map, your computer can take the wrong train. That's what happens with TunnelVision. 
 
-d aliquet lectus proin nibh nisl condimentum. Vitae tortor condimentum lacinia quis vel eros donec ac odio
+The malicious person tricks your computer into sending your private info over the local network instead of the VPN, totally avoiding the VPN’s protection.
 
+Meanwhile, VPN marketing claims say they can protect you from someone changing the maps in the train station but this is impossible in most cases.
 
 ## Why This Matters
-Sem et tortor consequat id. Ut sem nulla pharetra diam sit amet nisl suscipit. Pellentesque nec nam aliquam sem et tortor. Libero nunc consequat interdum varius sit. Mauris sit amet massa vitae tortor condimentum lacinia quis.
 
-Pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Nibh venenatis cras sed felis eget velit aliquet sagittis. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Dolor sed viverra ipsum nunc aliquet. 
- 
-A erat nam at lectus urna duis. Scelerisque viverra mauris in aliquam sem fringilla. Ullamcorper dignissim cras tincidunt lobortis.
+People who use VPNs and think they are completely protected on unsafe networks are wrong. This includes people like journalists or activists who really need to keep their information safe. 
 
+TunnelVision shows that just using a VPN isn't enough. It also calls into question whether VPNs should make such promises at all.
 
 ## Why We Are Telling You This Now
-Scelerisque varius morbi enim nunc faucibus a pellentesque sit. Dictum sit amet justo donec enim. Ac turpis egestas maecenas pharetra convallis posuere morbi. Gravida neque convallis a cras semper a
 
-uctor neque. Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus. Pulvinar etiam non quam lacus suspendisse faucibus interdum. Sed viverra tellus in hac habitasse platea. 
+We want everyone to understand this issue because it has been possible to do this since 2002, and maybe some people already know and use this trick. It would be hard to tell if they did.
 
-Porta lorem mollis aliquam ut porttitor leo a. Velit aliquet sagittis id consectetur purus ut. 
+We tried to tell VPN companies one-by-one about it, but there are too many for just our small team to contact. So we got help from bigger organizations, like the EFF and CISA to tell more people and companies. 
 
-Venenatis cras sed felis eget velit aliquet. Tellus cras adipiscing enim eu turpis. Dolor magna eget est lorem ipsum. Augue interdum velit euismod in 
+We told over 50+ companies but this is an international problem and is bigger than even they can assist with.
 
-pellentesque massa placerat duis ultricies. Velit scelerisque in dictum non.
+Now we're publishing more broadly with the hopes we can make people aware and keep more people safe.
 
 ## Fixing the Problem
-Ante in nibh mauris cursus mattis molestie
 
-a. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer.
- 
-Nunc congue nisi vitae suscipit. Faucibus interdum posuere lorem ipsum. Interdum consectetur libero id faucibus nisl. Volutpat diam ut venenatis tellus in metus
+Fixing this isn't easy. 
 
-vulputate eu scelerisque. Egestas fringilla phasellus faucibus scelerisque eleifend. Fermentum odio eu feugiat pretium. Pretium quam vulputate dignissim suspendisse. 
+VPNs were originally created to connect two separate networks securely, not to protect all the information on your computer all the time in any environment.
 
-Elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Quam viverra orci sagittis eu volutpat odio facilisis mauris. Semper quis lectus nulla at volutpat
+The the different systems are doing what they were meant to do. The misunderstanding comes from VPN companies saying they can keep you safe in ways they can't prove.
 
-diam ut venenatis. 
+On Linux computers, there’s something called "network namespaces" that makes it possible to have a one VPN train in the station so there's no other choice. Other systems like Windows and MacOS don’t have a full solution yet, so VPNs can only use band-aid fixes, but can’t fix it completely. 
+
+This means there is still a chance for someone to sneak a peek at your info or know who you are talking to when your using public Wi-Fi or untrusted networks.
 
 ## What You Can Do
 
-Scelerisque varius morbi enim nunc faucibus a pellentesque sit:
-1.  In dictum non consectetur a erat nam. Morbi blandit cursus risus at ultrices.
-1.  psum dolor sit amet consectetur adipiscing.
-1.  Diam quis enim lobortis scelerisque fermentum. 
+If you need to keep your information very private:
+1.  Avoid using Wi-Fi or networks you don’t trust, such public Wi-Fi.
+1.  Connect personal hotspot WiFi instead, in most cases you can trust that more.
+1.  Use AdBlock and browsers that protect your privacy by blocking trackers.
 
-Scelerisque varius morbi enim nunc faucibus a pellentesque sit:
-1.  Leo vel fringilla est ullamcorper eget nulla facilisi
-1.  Leo vel fringilla est ullamcorper eget nulla facilisi
-1.  Leo vel fringilla est ullamcorper eget nulla facilisi
+Ask those who sell VPNs to:
+1.  Be honest in their advertising.
+1.  Think about adding extra security features to help protect users.
+1.  Update their marketing and be specific about their promises.
