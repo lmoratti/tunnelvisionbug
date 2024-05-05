@@ -5,7 +5,7 @@ google_analytics: G-6JTRL0ZRGQ
 theme: jekyll-theme-cayman
 host: 0.0.0.0
 tunnelvision:
-  blog_url: https://leviathansecurity.com/blog
+  blog_url: https://www.leviathansecurity.com/blog/tunnelvision
   lab_url: https://github.com/leviathansecurity/TunnelVision/
 
 plugins:
