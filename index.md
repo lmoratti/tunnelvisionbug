@@ -13,7 +13,7 @@ From the user's perspective, they appear as if they are connected to the VPN.
 # How TunnelVision Works
 Computers may be connected to multiple networks at once. A VPN is also a network you're connected to. Computers decide which network they should send traffic through using a set of rules called "routing tables". 
 
-An attacker on the same local network can manipulate these rules and force traffic over the wrong network.
+An attacker on the same local network can manipulate these rules and force traffic over the wrong network. More technical details are available on the [blog post]({{ site.tunnelvision.blog_url}}).
 
 From there, they can redirect traffic meant for the VPN to the local network, *completely bypassing the VPN.* Because this technique is not dependent on exploiting VPN technologies or underlying protocols, it works completely independently of the VPN provider or implementation. 
 
