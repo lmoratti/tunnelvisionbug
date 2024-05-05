@@ -23,6 +23,8 @@ In no circumstances did we observe a VPN Server disconnecting us with kill switc
 # Isn't most web traffic encrypted with HTTPS anyways?
 This is true. If HTTPS traffic is decloaked it is not possible to view the encrypted contents of the packet. For other protocols that are unencrypted, the packet's payload is also readable so in this way an attacker might get lucky.
 
+However, it is still possible to see the destination and the protocol of the packet. Normally, that information would be inside the VPN protocols payload and encrypted.
+
 # Why are you saying the mitigation's side-channel is so impactful?
 Since most web traffic is encrypted with HTTPS, attackers can only determine the destination and protocol of the traffic. 
 
