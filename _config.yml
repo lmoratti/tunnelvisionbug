@@ -1,5 +1,5 @@
 title: TunnelVision
-description: "RTA-2024-1337: Vel facilisis volutpat est velit egestas dui id ornare arcu."
+description: "CVE-2024-3661: A local network VPN leaking technique that affects all routing-based VPNs"
 show_downloads: true
 google_analytics: G-6JTRL0ZRGQ
 theme: jekyll-theme-cayman
