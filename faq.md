@@ -46,4 +46,4 @@ Most enterprise networks do. However, most people using VPNs are not connecting 
 In addition, part of the VPN provider threat model is they can secure *any* untrusted network, including those who do not have these protections.
 
 # Can you change the configuration of the DHCP server in the middle of a VPN session?
-Yes. By setting a short lease length, an attacker can modify the configurations in the middle of a VPN session.
+Yes. By setting a short DHCP lease length, an attacker can modify the configurations in the middle of a VPN session.
