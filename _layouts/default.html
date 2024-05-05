@@ -13,7 +13,7 @@
     {% include head-custom.html %}
   </head>
   <body bgcolor="#1d394b" >
-    <script> window.onload = function() {var particles = Particles.init({selector: '.background',maxParticles: 40, sizeVariations: 1, minDistance: 500, speed: 0.25, connectParticles: true, color: ['#035039', '#114463', '#159957'] });};</script>
+    <script> window.onload = function() {var particles = Particles.init({selector: '.background',maxParticles: 40, sizeVariations: 1, minDistance: 100, speed: 0.25, connectParticles: true, color: ['#035039', '#114463', '#159957'] });};</script>
     <header class="page-header" role="banner">
       <a href="{{site.url}}" > <h1 class="project-name"> {{ page.title | default: site.title | default: site.github.repository_name }}</h1></a>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
