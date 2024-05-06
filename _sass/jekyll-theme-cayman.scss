@@ -25,6 +25,12 @@
   box-sizing: border-box;
 }
 
+html{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -64,7 +70,7 @@ body {
 
 a {
   color: $body-link-color;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:hover {
     text-decoration: underline;
@@ -75,19 +81,18 @@ a {
   display: inline-block;
   margin-bottom: 1rem;
   opacity: 1;
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(27, 60, 206, 0.08);
-  border-color: rgba(255, 255, 255, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 0.3rem;
+  color:#fff;
+  border: 2px solid #0D0D0F;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 
   &:hover {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    background-color: rgba(5, 19, 148, 0.2);
-    border-color: rgba(9, 153, 64, 0.3);
+    border: 2px solid #84BC9C;
+    border-radius: 0.3rem;
+  }
+  &:active {
+    border-bottom: 2px solid #84BC9C;
   }
 
   + .btn {
@@ -118,9 +123,13 @@ a {
 
 .page-header {
   color: $header-heading-color;
-  text-align: center;
+  text-align: left;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: #0D0D0F;
+  max-width: 63rem;
   
-  background-image: linear-gradient(120deg, rgba($header-bg-color-secondary,0.5), rgba($header-bg-color,0.5));
 
   @include large {
     padding: 1rem 1rem;
@@ -135,34 +144,90 @@ a {
   }
 }
 
+.eye-div{
+  display:block;
+  text-align: center;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: #0D0D0F;
+}
+.eye{
+  display: block;
+  position: relative;
+  height: 25vw;
+  min-width: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.sticky-nav {
+  position: sticky; 
+  top: 0;
+  text-align: center;
+}
 .project-name {
   margin-top: 0;
-  margin-bottom: 0.1rem;
+  margin-bottom: -0.3rem;
+  display:inline-block;
   opacity: 1;
+  text-align: left;
+  vertical-align: text-top;
+  position: relative;
+  margin-right:1rem;
+  font-weight: normal;
 
   @include large {
     font-size: 3.25rem;
     font-family: Hakuna Sans, sans-serif;
     color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   }
 
   @include medium {
     font-size: 2.25rem;
     font-family: Hakuna Sans, sans-serif;
     color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   }
 
   @include small {
     font-size: 1.75rem;
     font-family: Hakuna Sans, sans-serif;
     color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   }
 }
+.description-container{
+  display: block;
+  text-align: left;
+  position: relative;
+  margin-left: auto;
+  margin-right:auto;
+}
+.cve-tag{
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  vertical-align: bottom;
+  height:1.5rem;
+  width:9rem;
+  border-radius: 0.1rem;
+  background-color: #444d56;
 
+  
+}
 .project-tagline {
   margin-bottom: 2rem;
+  display:inline-block;
+  position:relative;
   font-weight: normal;
   opacity: 1;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  text-align: left;
+  margin:auto;
+ 
 
   @include large {
     font-size: 1.25rem;
@@ -179,7 +244,8 @@ a {
 
 .main-content {
   word-wrap: break-word;
-  border: #fafbfc;
+  display: grid;
+
 
   :first-child {
     margin-top: 0;
@@ -190,7 +256,7 @@ a {
     padding: 2rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem;
-    background: rgba(#1d394b,0.7);
+    
   }
 
   @include medium {
@@ -203,6 +269,13 @@ a {
     font-size: 1rem;
   }
   
+  iframe {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 428px;
+    height:500px;
+  }
+
   kbd {
     background-color: #fafbfc;
     border: 1px solid #c6cbd1;
@@ -221,14 +294,7 @@ a {
     max-width: 800px;
     max-height: 300px;
   }
-  .leviathan_logo{
-    max-width: 600px;
-    max-height: 100px;
-    width: 50vw;
-    height: 10vw;
-    padding: 5px 5px;
-    filter: invert(100%)
-  }
+ 
 
   h1,
   h2,
@@ -380,9 +446,12 @@ a {
 }
 
 .site-footer {
+  width: 100%;
   padding-top: 2rem;
   margin-top: 2rem;
   border-top: solid 1px $hr-border-color;
+  font-weight: normal;
+  background-color: #114463;
 
   @include large {
     font-size: 1rem;
@@ -396,14 +465,18 @@ a {
     font-size: 0.9rem;
   }
 }
-
-.site-footer-owner {
-  display: block;
-  font-weight: bold;
+.leviathan_logo{
+  width: auto;
+  height: 56px;
+  padding: 5px 5px;
+  margin-bottom: 16px;
+  filter: invert(100%)
 }
 
 .site-footer-credits {
   color: $blockquote-text-color;
   display: block;
-  text-align-last: center;
+  margin: auto;
+  text-align: left;
+  max-width: 70rem;
 }
