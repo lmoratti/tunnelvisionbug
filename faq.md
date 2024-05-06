@@ -3,7 +3,7 @@ layout: default
 ---
 
 # How was this found?
-We researched VPN threat models for a project and produced methods to attack VPNs. The team's idea proved to be a severe issue, and we suspected it affected it affected the entirety of the VPN industry. That's when we began research in earnest.
+We researched VPN threat models for a project and produced methods to attack VPNs. The team's idea proved to be a severe issue, and we suspected it affected the entirety of the VPN industry. That's when we began research in earnest.
 
 # Has this been exploited in the wild?
 We have not seen evidence as of 5/6/2024 of exploitation in the wild. However, we believe this was possible as far back as 2002, so it's possible someone besides us found TunnelVision but didn't widely disclose or realize the severity.
@@ -13,7 +13,7 @@ In order to detect this, you would need to be reviewing DHCP network traffic and
 # Haven't routing table leaks in VPNs been known for years? How is this novel?
 Correct, routing table issues have been known for years. This is why the privacy and anonymity communities discourage VPNs. Most issues found have been small and patchable leaks.
 
-We have not seen any prior research using DHCP option 121 to deliver routes, which is the novel part of our research. It also not patchable in the same way smaller leaks have been (besides on Linux).
+We have not seen any prior research using DHCP option 121 to deliver routes, which is the novel part of our research. It also is not patchable in the same way smaller leaks have been (besides on Linux).
 
 # Wouldn't exploiting this be obvious?
 Not really. The VPN user shows as being connected to the VPN. Attackers can control which IPs they wish to decloak, so theoretically they could choose to not decloak leak checking IPs. They could also leak DNS IPs while forwarding the traffic so the VPN connection is intact, but they obtain information about the traffic in the tunnel.
