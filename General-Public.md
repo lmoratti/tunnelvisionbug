@@ -45,7 +45,7 @@ VPNs were originally created to connect two separate networks securely, not to p
 
 The different systems are doing what they were meant to do. The misunderstanding comes from VPN companies saying they can keep you safe in ways they can't prove.
 
-On Linux computers, there’s something called "network namespaces" that makes it possible to have a one VPN train in the station so there's no other choice. Other systems like Windows and MacOS don’t have a full solution yet, so VPNs can only use band-aid fixes, but can’t fix it completely. 
+On Linux computers, there’s something called "network namespaces" that makes it possible to have only a VPN train in the station so there's no other choice. Other systems like Windows and MacOS don’t have a full solution yet, so VPNs can only use band-aid fixes, but can’t fix it completely. 
 
 This means there is still a chance for someone to sneak a peek at your info or know who you are talking to when your using public Wi-Fi or untrusted networks.
 
