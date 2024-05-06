@@ -1,5 +1,5 @@
 title: TunnelVision
-description: "CVE-2024-3661: A local network VPN leaking technique that affects all routing-based VPNs"
+description: "A local network VPN leaking technique that affects all routing-based VPNs"
 show_downloads: true
 google_analytics: G-6JTRL0ZRGQ
 theme: jekyll-theme-cayman
@@ -10,4 +10,3 @@ tunnelvision:
 
 plugins:
   - jekyll-loading-lazy 
-  - jekyll-language-plugin

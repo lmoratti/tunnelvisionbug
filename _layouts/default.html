@@ -12,40 +12,59 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
   </head>
-  <body bgcolor="#1d394b" >
+  <body bgcolor="#18181B" >
     <script> window.onload = function() {var particles = Particles.init({selector: '.background',maxParticles: 40, sizeVariations: 1, minDistance: 100, speed: 0.25, connectParticles: true, color: ['#035039', '#114463', '#159957'] });};</script>
+    <div class="eye-div" > 
+      <img class="eye" src="/assets/TunnelVision_cn.jpg"> 
+    
     <header class="page-header" role="banner">
-      <a href="{{site.url}}" > <h1 class="project-name"> {{site.title }}</h1></a>
-      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+      
+        <div class="description-container">
+          <h1 class="project-name"> {{site.title }}</h1>
+          <p class="cve-tag"> CVE-2024-3661</p>
+          </div>
+    
+    <div style="text-align: left;">
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}<br />Authors: <a href="https://www.linkedin.com/in/danicronce/">Dani Cronce</a> & <a href="https://www.linkedin.com/in/lmoratti/">Lizzie Moratti</a> from <a href="https://www.leviathansecurity.com/">Leviathan Security Group</a></h2>
+     </div>
+    
+     <br />
       {% if site.show_downloads %}
-      <a href="./General-Public" class="btn">General Public Advisory</a>
       <a href="./" class="btn">Technical Advisory</a>
+      <a href="./General-Public" class="btn">General Public Advisory</a>
       <a href="./faq" class="btn">FAQ</a>
-      <a href="{{ site.tunnelvision.blog_url }}" class="btn">View the full blog</a>
-      <a href="{{ site.tunnelvision.lab_url }}" class="btn">View the lab setup</a>
+      <a href="{{ site.tunnelvision.blog_url }}" class="btn">Full blog</a>
+      <a href="{{ site.tunnelvision.lab_url }}" class="btn">Lab Setup</a>
       
       {% endif %}
+    
     </header>
+  </div>
     <main id="content" class="main-content" role="main">
       <div align="right" padding-left=10% >{% include share-buttons.html %}</div>
-      <p align="padding-left">Authors: <a href="https://www.linkedin.com/in/danicronce/">Dani Cronce</a> & <a href="https://www.linkedin.com/in/lmoratti/">Lizzie Moratti</a> from <a href="https://www.leviathansecurity.com/">Leviathan Security Group</a></p>
       <p>Publish Date: 5/6/2024</p>
       {{ content }}
-      <footer class="site-footer">
-        <span class="site-footer-credits">
-          
-          <br />
-          We will forever be grateful to Leviathan for allowing us to chase our curiosity.
-          <br /> 
-          If you are a security professional who wants to own their research, <a href="https://www.leviathansecurity.com/careers">you should join Leviathan.</a>
-          <br /> 
-          <br /> 
-          <a href="https://www.leviathansecurity.com/"><img class="leviathan_logo" src="/assets/leviathan_logo.png"></a>
-          <br />
-        </span>
-      </footer>
+      
     </main>
     <canvas class="background" background-attachment: fixed;></canvas>
     <script src="/assets/particles.min.js"></script>
+    <footer class="site-footer">
+      <span class="site-footer-credits">
+        <div style="display:inline-block">
+        <a href="https://www.leviathansecurity.com/"><img class="leviathan_logo" src="/assets/leviathan_logo.png"></a>
+      </div>
+        <div style="text-align: left; display:inline-block;padding:16px 16px 16px; color:#fff">
+          <div>
+            We will forever be grateful to Leviathan for allowing us to chase our curiosity.
+            <br /> 
+            If you are a security professional who wants to own their research, <a href="https://www.leviathansecurity.com/careers">you should join Leviathan.</a>
+            <br /> 
+            <br /> 
+        </div>
+      </div>
+        <br />
+      </span>
+    </footer>
   </body>
+  
 </html>

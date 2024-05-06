@@ -19,7 +19,7 @@ From there, they can redirect traffic meant for the VPN to the local network, *c
 
 We call this total bypass, **decloaking.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ajsLmZia6UU?si=tjakCcpuNF-KnGd9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/ajsLmZia6UU?si=tjakCcpuNF-KnGd9" width="640px" height="320px" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # Impact 
 VPN users who expect VPNs to protect them on untrusted networks are as susceptible to the very same attacks as if they weren't using a VPN. This is particularly dangerous for people who rely on VPNs to keep them safe such as journalists and political dissidents.
@@ -66,6 +66,7 @@ If you are a VPN provider:
 
 If you are an operating system maintainer:
 1.  Consider implementing network namespaces if your operating system doesn't support it.
+
 
 # Prior Research
 We found research related to DHCP leaking default routes over an incorrect interface [as far back as 2015](https://petsymposium.org/popets/2015/popets-2015-0006.pdf).
