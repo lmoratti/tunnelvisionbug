@@ -53,7 +53,7 @@ This means there is still a chance for someone to sneak a peek at your info or k
 
 If you need to keep your information very private:
 1.  Avoid using Wi-Fi or networks you don’t trust, such public Wi-Fi.
-1.  Connect personal hotspot WiFi instead, in most cases you can trust that more.
+1.  Connect to a personal hotspot WiFi instead, in most cases you can trust that more than public Wi-Fi.
 1.  Use AdBlock and browsers that protect your privacy by blocking trackers.
 
 Ask those who sell VPNs to:
