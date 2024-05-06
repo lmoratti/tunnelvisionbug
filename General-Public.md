@@ -19,7 +19,7 @@ The malicious person tricks your computer into sending your private info over th
 
 Meanwhile, VPN marketing claims say they can protect you from someone changing the maps in the train station but this is impossible in most cases.
 
-<iframe width="560" height="315" align="center" src="https://www.youtube.com/embed/ajsLmZia6UU?si=tjakCcpuNF-KnGd9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% include youtube.html id='ajsLmZia6UU' %}
 
 ## Why This Matters
 
