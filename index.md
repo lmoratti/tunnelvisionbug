@@ -32,7 +32,7 @@ Our research challenges previous understanding of VPN technology. It also raises
 # Why We Are Publishing Now
 We aim to raise awareness about this technique in the security and privacy communities. Since it could have been exploitable as early as 2002, it might already be in use without widespread knowledge. 
 
-We initially disclosed this to several VPN providers but quickly realized that it wasn't scalable and there were too many affected parties. We contacted the EFF and CISA and through them, we've made over 50+ vendors aware of this before public release.
+We initially disclosed this to several VPN providers but quickly realized that it wasn't scalable, and there were too many affected parties. We contacted the EFF and CISA and through them, we've made over 50+ vendors aware of this before public release.
 
 In addition, to help raise awareness, we decided to name the CVE, in the hopes that a more human-readable name would extend the awareness to outside the security and privacy communities and into the general public. 
 
@@ -49,12 +49,12 @@ Additionally, there might be bypasses that we have not discovered for the mitiga
 
 Groups primarily affected by the shortcomings of mitigations are those who commonly are the targets of surveillance or spyware, journalists, whistleblowers, and those needing to bypass censorship. 
 
-One could argue that the OS maintainers should implement this feature and one could also argue that VPNs shouldn't be advertising a feature that is impossible on many devices. 
+One could argue that the OS maintainers should implement this feature, and one could also argue that VPNs shouldn't be advertising a feature that is impossible on many devices. 
 
-Ultimately, we feel that it's a shared responsibility and the people who suffer from this are the VPN users.
+Ultimately, we feel that it's a shared responsibility, and the people who suffer from this are the VPN users.
 
 # Call to Action
-If you require total privacy of your connection:
+If you require the total privacy of your connection:
 1.  Do not use untrusted networks (Public WiFi)
 1.  Consider using a hotspot with your VPN
 1.  Consider using a VPN inside a virtual machine that does not have a bridged network adapter
