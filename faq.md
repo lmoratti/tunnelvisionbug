@@ -20,6 +20,9 @@ Not really. The VPN user shows as being connected to the VPN. Attackers can cont
 
 In no circumstances did we observe a VPN server disconnecting us with kill switches or other features.
 
+# Aren't you going to be snooping on encrypted packets?
+The packets will not be encrypted. DHCP option 121 will alter your routing table and send your traffic over a non-VPN interface, completely bypassing the encryption routine VPN application processes normally do. You can't encrypt what you never receive.
+
 # Isn't most web traffic encrypted with HTTPS anyways?
 This is true. If HTTPS traffic is decloaked it is still not possible to view the encrypted contents of the packet. For unencrypted protocols, the packet's payload is readable.
 
@@ -45,3 +48,4 @@ In addition, part of the VPN provider threat model is they can secure *any* untr
 
 # Can you change the configuration of the DHCP server in the middle of a VPN session?
 Yes. By setting a short DHCP lease length, an attacker can modify the configurations in the middle of a VPN session.
+
