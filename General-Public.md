@@ -43,7 +43,7 @@ Fixing this isn't easy.
 
 VPNs were originally created to connect two separate networks securely, not to protect all the information on your computer all the time in any environment.
 
-The the different systems are doing what they were meant to do. The misunderstanding comes from VPN companies saying they can keep you safe in ways they can't prove.
+The different systems are doing what they were meant to do. The misunderstanding comes from VPN companies saying they can keep you safe in ways they can't prove.
 
 On Linux computers, there’s something called "network namespaces" that makes it possible to have a one VPN train in the station so there's no other choice. Other systems like Windows and MacOS don’t have a full solution yet, so VPNs can only use band-aid fixes, but can’t fix it completely. 
 
