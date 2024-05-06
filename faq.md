@@ -37,7 +37,7 @@ The side-channel is also flexible in use:
 1. The attacker can use IP space denial with binary search to determine all current connections in logarithmic time.
 
 # Why is this so bad compared to other leaks?
-VPN providers often claim that no one, not even a network administrator, is able to remove your VPN protections. They may state it as "securing you on a untrusted network."
+VPN providers often claim that no one, not even a network administrator, is able to remove your VPN protections. They may state it as "securing you on an untrusted network."
 
 TunnelVision shows that a network administrator can completely remove VPN protections. To make matters worse, we've demonstrated that an attacker who is on the same network has ways to control DHCP. This is demonstrated in our [POC video](https://www.youtube.com/watch?v=ajsLmZia6UU)
 
