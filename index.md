@@ -11,9 +11,9 @@ TunnelVision leaks VPN traffic more simply and powerfully. We have demonstrated 
 From the user's perspective, they appear as if they are connected to the VPN.
 
 # How TunnelVision Works
-Computers may be connected to multiple networks at once. A VPN is also a network you're connected to. Computers decide which network they should send traffic through using a set of rules called "routing tables". 
+Computers may be connected to multiple networks at once. A VPN is also a network you're connected to. Computers decide which network they should send traffic through using a set of rules called "routing tables." 
 
-An attacker on the same local network can manipulate these rules and force traffic over the wrong network. More technical details are available on the [blog post]({{ site.tunnelvision.blog_url}}).
+An attacker on the same local network can manipulate these rules and force traffic over the wrong network. **TunnelVision does not generally require compromising a DHCP server**. More technical details are available on the [blog post]({{ site.tunnelvision.blog_url}}).
 
 From there, they can redirect traffic meant for the VPN to the local network, *completely bypassing the VPN.* Because this technique is not dependent on exploiting VPN technologies or underlying protocols, it works completely independently of the VPN provider or implementation. 
 
@@ -25,25 +25,25 @@ We call this total bypass, **decloaking.**
 # Impact 
 VPN users who expect VPNs to protect them on untrusted networks are as susceptible to the very same attacks as if they weren't using a VPN. This is particularly dangerous for people who rely on VPNs to keep them safe such as journalists and political dissidents.
 
-Luckily, most users who use commercial VPNs are sending web traffic which is mostly HTTPS ([about 85%, actually](https://w3techs.com/technologies/details/ce-httpsdefault)). HTTPS traffic looks like gibberish to attackers using Tunnelvision, but they know who you are sending that gibberish to which can be an issue. If a website is using HTTP then it becomes possible to view everything you are saying as well as who you are saying it to.
+Luckily, most users who use commercial VPNs are sending web traffic which is mostly HTTPS ([about 85%, actually](https://w3techs.com/technologies/details/ce-httpsdefault)). HTTPS traffic looks like gibberish to attackers using Tunnelvision, but they know who you are sending that gibberish to which can be an issue. If a website is using HTTP, then it becomes possible to view everything you are saying as well as who you are saying it to.
 
 Our research challenges previous understanding of VPN technology. It also raises questions about what other technologies are impacted by routing table attacks and how this could go unnoticed for 20+ years.
 
 # Why We Are Publishing Now
 We aim to raise awareness about this technique in the security and privacy communities. Since it could have been exploitable as early as 2002, it might already be in use without widespread knowledge. 
 
-We initially disclosed this to several VPN providers but quickly realized that it wasn't scalable, and there were too many affected parties. We contacted the EFF and CISA and through them, we've made over 50+ vendors aware of this before public release.
+We initially disclosed this to several VPN providers but quickly realized that it wasn't scalable, and there were too many affected parties. We contacted the EFF and CISA and, through them, we've made over 50+ vendors aware of this before public release.
 
-In addition, to help raise awareness, we decided to name the CVE, in the hopes that a more human-readable name would extend the awareness to outside the security and privacy communities and into the general public. 
+In addition, we decided to name the CVE in the hopes that a more human-readable name would extend the awareness to outside the security and privacy communities and into the general public. 
 
 # How Do We Fix This
-Well, that's a difficult question. VPNs were not made to secure every connection on a computer. Their purpose is to connect two local networks that normally are not connected and to secure data going over that bridge. It was not meant to protect traffic on the local network, just to protect traffic after exiting to the WAN.
+Well, that's a difficult question. VPNs were not made to secure every connection on a computer. Their purpose is to connect two local networks that normally are not connected and to secure data going over that channel. It was not meant to protect traffic on the local network, just to protect traffic after exiting to the WAN.
 
 In that regard, VPNs are working as intended, local network protocols are working as intended, and the routing tables in your operating system are working as intended. Fundamentally, the public understanding of VPNs is what's broken. This is largely due to marketing campaigns by VPN providers. 
 
-There is a fix on Linux operating systems through a feature called "network namespaces". Network namespaces can segment interfaces and routing tables away from the local network’s control.
+There is a fix on Linux operating systems through a feature called "network namespaces." Network namespaces can segment interfaces and routing tables away from the local network’s control.
 
-Other operating systems do not have a full fix available. For those operating systems, the best that a VPN provider can do is mitigate the leak. However, all mitigations we've observed still expose a serious issue for users who rely on total privacy of their connection and the issue can also be abused for censorship.
+Other operating systems do not have a full fix available. For those operating systems, the best that a VPN provider can do is mitigate the leak. However, all mitigations we've observed still expose a serious issue for users who rely on total privacy of their connection, and the issue can also be abused for censorship.
 
 Additionally, there might be bypasses that we have not discovered for the mitigations, so inevitably relying on using mitigations will create a "cat and mouse" game between attackers and defenders.
 
