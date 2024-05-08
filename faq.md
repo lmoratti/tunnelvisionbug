@@ -10,10 +10,23 @@ We have not seen evidence as of 5/6/2024 of exploitation in the wild. However, w
 
 In order to detect this, you would need to be reviewing DHCP network traffic and DHCP client logs. This might be possible retroactively.
 
-# Haven't routing table leaks in VPNs been known for years? How is this novel?
+# Haven't routing table leaks in VPNs been known for years? 
 Correct, routing table issues have been known for years. This is why the privacy and anonymity communities discourage VPNs. Most issues found have been small and patchable leaks.
 
-We have not seen any prior research using DHCP option 121 to deliver routes, which is the novel part of our research. It also is not patchable in the same way smaller leaks have been (besides on Linux).
+# How is this novel?
+~~We have not seen any prior research using DHCP option 121 to inject routes and decloak VPNs, which is the novel part of our research~~. It also is not completely patchable in the same way smaller leaks have been (besides on Linux). We pointed to prior research on this topic related to routing table issues that have been known for years that we were able to find.
+
+UPDATE: The purpose of this research was to test this technique against modern VPN providers to determine their vulnerability and to notify the wider public of this issue. This is why we agreed with CISA to file a CVE when we disclosed to them and why we decided to name the vulnerability. 
+
+After publication, we have received details about prior research into combining routing table behavior with option 121. These researchers showed that at least some people were aware of DHCP option 121's effect on VPNs going back to at least 2015. Despite this, the research did not lead to wide deployment of mitigations nor the general public awareness of the decloaking behavior.
+
+That said, we are grateful for the input of past researchers who explored the problem space. We will continue to credit our fellow security researchers who explored these issues.
+
+Prior works referencing DHCP 121 route injection or VPN decloaking:
+- 2015 [Hardening OpenVPN for Def Con](https://www.agwa.name/blog/post/hardening_openvpn_for_def_con])
+- 2016 [Samy Kamkar's PoisonTap](https://github.com/samyk/poisontap)
+- 2017 [Jomo's Mastodon](https://mstdn.io/@jomo/98981403329690455)
+- 2023 [Lowend talk thread](https://lowendtalk.com/discussion/188857/a-rogue-dhcp-server-within-your-network-can-and-will-hijack-your-vpn-traffic)
 
 # Wouldn't exploiting this be obvious?
 Not really. The VPN user shows as being connected to the VPN. Attackers can control which IPs they wish to decloak, so theoretically they could choose to not decloak leak checking IPs. They could also leak DNS IPs while forwarding the traffic so the VPN connection is intact, but they obtain information about the traffic in the tunnel.
